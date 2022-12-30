@@ -1,0 +1,47 @@
+API -> Application Programming Interface .
+
+API -> A set of program that allows to interact with other software/program .
+
+Points to be remembered:--
+    1.) API is a tool for sharing data in applications.
+        ==> It may be between two software or software and program 
+    2.) Share data between platformds.
+        ==> Like data interchange between Front-end & Back-end.
+    3.) Share Data from between programming language.
+        ==> Let's assume that you have written some program in Java,some in C++,some in Python,Now you want to combine them,than API is also used.
+
+*) Without API you can't share data because one's code can't be understandalbe by another code Without API.
+
+There are several kinds of API method exist in API community but mostly 4 of them are oftenly used.They are:--
+    1.) GET     --> It's used to get data from Database.
+    2.) POST    --> It's used to save data in Database.
+    3.) PUT     --> It's used to update data in Database.
+    4.) DELETE  --> It's used to delete data from Database.
+
+Q.1) Can we pass "body" in GET method ?
+==> No. We can pass "query" 
+
+POST API method ---
+==> When we want to save/store some new data through API, then POST method is used.
+
+
+Q.2) Can we set the same route for both 'get' and 'post' method ?
+==> Yes. 
+
+
+Q.3) "app.use(express.json())" is used instead of using "body-parser" .
+
+*) If we want to update some data of a database then we should use "PUT" method of API.
+ 
+Q.4) Now one question may arise in your mind that can we update data using "POST" method ?
+==> Yes, ofcourse .But you are recommended to use "PUT" method When you want to update some data.remember that
+    we can apply one particular method for many task but this may not be standard for the task.
+
+*) We can access data through "req.params.name" for "PUT" method .
+
+*) we can't select an item by writing "id" , we have to write "_id" .
+Secnodly, this "_id" is an Object so before using it we have to create an instaence of this Object by following the below syntax :--
+    {_id : new mongodb.ObjectId(req.params.id)}
+
+__________------__________------__________------__________
+----------______----------______----------______----------

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic page</title>
+</head>
+<body>
+    <%- include('common/header') %>
+    <h1>Welcome! <%= student.name %> </h1>
+    <h1>Age : <%= student.age %> </h1>
+    <h1>Email : <%= student.email %> </h1>
+    <h1>Roll : <%= student.roll %> </h1>
+
+    <ol type="i">
+        <% student.skills.forEach((item)=>{ %>
+            <li> <%= item %> </li>
+        <% }) %>
+    </ol>
+
+</body>
+</html>

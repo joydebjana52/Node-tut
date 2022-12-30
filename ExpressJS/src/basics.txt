@@ -1,0 +1,1 @@
+In No-SQL Data base every row is known as document and every table is known as collection.

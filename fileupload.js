@@ -1,0 +1,22 @@
+const express = require('express');
+const multer = require('multer');
+const app = express();
+
+app.use(express.json());
+
+const upload = multer({
+    storage:multer.diskStorage({
+        destination:function(req,file,cb){  // cb is a Call-Back function ...
+            cb(null,"uploads")
+        },
+        filename:function(req,file,cb){
+            cb(null,file.fieldname+"_"+Date.now()+'.jpg');
+        }
+    })
+}).single("user_file");
+
+app.post('/upload',upload,(req,res)=>{
+    res.send('File uploaded');
+});
+
+app.listen(8000);

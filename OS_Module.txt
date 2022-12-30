@@ -1,0 +1,4 @@
+OS Module => Operating System Module.
+
+It's used in such projects where you need the details of your system then we use OS Module.
+Like RAM,Artichitecture,HostName etc.

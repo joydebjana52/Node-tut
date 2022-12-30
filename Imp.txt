@@ -1,0 +1,5 @@
+We can change file name by using the following syntax :-
+
+app.set('views','newName') ;
+
+

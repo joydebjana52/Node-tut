@@ -1,0 +1,142 @@
+ExpressJS is nothing but framework of NodeJS like Java's frameworks are Hibernate and SprigBoot.It's easier than other Frameworks of other Languages.
+
+const express = require('express');
+const app = express();
+this 'app' has several methods and one of them is get and it has two parameters first one is for 'route' and second one is a callback function that also requires two parameter first one is for 'request' and second in is for 'response' 
+
+
+app.get('route' , (req,res)=>{
+    res.send(); // res has send method...
+});
+
+*) when client/user sends data then through browser than it's captured by "req" parameter and when Node/Server tries to give response than it's done by "res" parameter.
+
+app has several methods but we use get only when we need to load a whole page.
+
+This "app"'s method get or post whatever can be but (req,res) exists always.
+
+Q.1) why we need path module ?
+==>  It helps us to access folders of our project .
+
+Q.2) why we use static() method ?
+==>  It can access static content of folder.
+
+*) use() is very important function and this is known as Middleware we'll discuss about it later.For now keep remember that it is a function of Express
+
+
+*) 
+
+const express = require('express');
+const path = require('path');
+
+const app = express();
+const publicPath = path.join(__dirname,'public');
+app.use(express.static(publicPath));
+
+app.listen(1234); 
+
+Here,  express is a framework and it has supplies for every kind of functions and express has also a function that is known as static() that can access static content.
+
+*) By following this way when we try to access root file then define the root file as index.html ,
+
+Q.3) can we directly apply css,image to html page ?
+==>  We can't directly apply because the path becomes ready through Node.JS 
+
+*) res has one more method and that is sendFile() which can send a file.
+
+
+Q.1) what is template engine ? (ejs)
+==>  It's used for creating dynamic pages it's also package of npm.
+
+*) when we want to use any template engine than Node.JS needs "views" name's folder.It's a by default configuration.Files inside this 'views' folder would have extention of '.ejs' .
+
+*) before use ejs wala view engine we must initialize it by following the below syntax :-
+            ---------- app.set('view engine','ejs'); --------------
+
+Here we are using this in  NodeJS to create dynamic page .
+
+
+
+*) How to use common part of a site in all page
+==> <%- include('common/header') %>     // Here we're using "hyphen" instead of using "equal" such that browser can understand that the code is written in HTML .
+
+
+-----------------   Middleware  ---------------
+
+This are functions who are used with routes .
+Middleware can access request,response and can also edit them
+Middleware is used to filter Response and request.
+
+Uses of Middleware:--
+    1.) To check if a user is logged in or nothing
+    2.) If we want to block a site for a particular country then also we use it
+    3.) To make changes in request and response than we also use Middleware.
+
+Middleware is reusable 
+
+Syntax of Middleware creating:--
+
+    const reqFilter = (req,res,next)=>{
+        if(some condition)
+        {
+            some code // res.send('response for if block');
+        }
+        //
+        ....
+        //
+        else
+        {
+            next();
+        }
+    };
+    app.use(reqFilter);
+
+
+Types of Middleware:-
+    1.) Application-level Middleware
+    2.) Router-level middleware
+    3.) Error-handling middleware
+    4.) Built-in middleware
+    5.) Third-party middleware
+
+---------------------------------------------------------------------------
+
+We can't collect form's data using 'req.query' while 'post' method is applied upon the form,so we have to use 'body-parser'.This module is 
+used to convert form's data into JSON format and encode the URL known as URLEncoded.
+
+
+//--------- for GET method  ----------//
+app.get('/form-submit',(req,res)=>{
+    res.send(`${req.query}get method`);
+});
+
+
+//--------- for POST method  ----------//
+app.use(bodyParser.json()); // Converting form's data into JSON format
+
+app.use(bodyParser.urlencoded({extended:true}));    // URL encoding and true/false is not neccesary
+
+app.post('/form-submit',(req,res)=>{
+    res.send(`${req.body}post method`);
+});
+
+---------------------------------------------------------------------------
+-----------------------------Route Level Middleware---
+
+If we want to apply middleware for some particular route then route level middleware.
+
+Deffinition of route level middleware:--
+==> Such middleware that can work upon a single route as well as group of route as well as upon all route is known as Route Level Middleware.
+
+*) We can create middleware as a another file.why we need to create middleware as distinct file -because it's not fixed that we only can create one middleware but also we can create many middleware so we can create new new file for middle ware.
+
+Difference between Application-level Middleware and Route-Level Middleware 
+==> Application-level middle can be applied globally but for Route-level middleware, can be applied upon Globally as well as single as well as group of route. 
+
+_______________________________________________________________________________________________________________________________
+                                                ------------ MongoDB ------------
+_______________________________________________________________________________________________________________________________
+
+MongoDB is DataBase 
+It's non-SQL DataBase
+It's GUI(Graphical User Interface)

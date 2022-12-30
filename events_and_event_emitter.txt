@@ -1,0 +1,24 @@
+Almost every-task in Node.JS is performed Event-based.It's important topic.
+
+Events is used in almost every language. Like we have already used them escpecially in HTML,JavaScript.
+
+*) Event :-> we can understand "Event" that is nothing but a singnal by using we do perform some task.
+*) Event-emitter :->This is a Class/Module that provides events, knows as Event-emitter.
+
+Q.1) If anyone asks you about creating a button through Node.JS 
+==> Then reply will be,through API.Beacuse normally buttons are part of Browser.
+
+*) Syntax of importing a Module 
+=> const EventEmitter = require('events);
+Now question is why we are writting "E" capital of EventEmitter ?
+==> Basically "EventEmitter" is a Class that's why.It'a standard way.
+
+
+_______________________________________________________
+    REPL in Node.JS
+REPL-> Read-Eval-Print-Loop .
+==> It's command line tool of Node where we can run JS,Node code on command-line.It's a very smart tool.
+If you want to write code like edior then in the enviroment execute the command ".editor" .ctrl+d .
+
+
+Example:- When you open command-promt in your system then run "node" command then you enter in REPL enviroment 

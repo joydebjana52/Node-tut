@@ -1,0 +1,56 @@
+|-----_____-----_____-----_____-----_____-----_____-----_____-----_____-----_____-----_____
+|-----_____-----_____-----_____-----_____-----_____-----_____-----_____-----_____-----_____|
+
+                    ----- Mongoose -----
+Mongoose is a npm package which is used to establish a connection between Node.JS and MongoDB.
+
+We've already learned that how to connect Node.JS and MongoDB then why should we this Mongoose ?
+==> Whatever we've learned having some restriction so we'll be using Mongoose to get more benefit.
+Actually, we can conclude that Mongoose is nothing but a modified version of mongodb.
+It provides some advanced fetures like "model","schema",validations.
+
+*) schema defines all existing field in database ,some validations,defines the structure,set default values etc.
+
+*) model connects NodeJS with MongoDB,It also indicates to a collection. 
+
+We can write the below syntax to build connection:--
+_______________________________________________________________________
+    const mongoose = require('mongoose');                              |
+    const main = async()=>{                                            |
+        await mongoose.connect('mongodb://localhost:27017/e-comm')     |
+    }                                                                  |
+_______________________________________________________________________|
+
+If we want to execute "index.js" then if we write only "nodemon" than it'll execute successfully because That's taken defaultly.
+
+Q.1) How you can find out(search) a data from database ?
+==> 
+
+
+Q.1) Why we create many file for configuring in mongoose ?
+==> Look, in a database we can have one connection but Schema and model may be multiple so to set up them we do create diff-diff file for diff-diff collections.
+
+
+*) when we want to delete some data from dataBase in the basis of id No than we send the id in req.query/req.params and it's considered as standard because whenever we gonna to delete the item there is nothing special in deleting so ...
+
+
+
+////
+search API can be build by following two way, first one is depending upon single field and second one is upon mnultiple field,
+==> Let's assume with the collection Whatever we have build in "e-comm" if we want to find a product just by their name  as well as by their name,price,brand,catagory.
+
+Q) Can we search element from a collection using "POST"/"PUT"/"Delete" method ?
+==> Yes. We can but there is some standardity.
+
+
+---------------------------------------------------------------
+|       ---- Upload File in Node.JS ----                      |
+---------------------------------------------------------------
+==> At first install "multer npm package" 
+
+Q) Can we Upload file without "multer" package ?
+==> Yes,But we have to write more code.
+
+
+_______________________________________________________________________
+    -- OS module --

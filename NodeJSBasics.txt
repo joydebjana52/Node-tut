@@ -1,0 +1,79 @@
+Q.1) console.log() of browser and console.log() of Node is same or not ?
+
+==> No!. browser has it's own console.log() and Node also have it's own .
+They are similar but not same...
+
+Q.2) What do you understand by Module in Node ?
+
+==> Module is a set/block(encapsulated) of code that can communicate with external file.Basically there are three(3) types of Module in Node Js and they are :-
+	a.) Core Module
+	b.) Local Module   
+	c.) Third-party Module.
+
+Q.3) What is Core Module ?
+
+==> Those modules which already exists in Node.Js they're known as Core Modules.
+
+*) We can also devide the modules in two part like Local Modules and Global Modules.
+
+*) when we import files than you're recommended to import at the top of the program...
+
+*) we can also import particaular files also like Java . (import java.util.Scanner here we particular imported Scanner class) 
+
+*) http module handels request and response.
+
+*) we can create package.json file by using "npm init" command in terminal.It's the most important file.
+
+*) package.json is such a file that keeps details of our project(about coding) 
+
+*) Node JS is a single threaded language that means it can run only one command at a time.
+
+*) By mistake if we delete the file named "node_module" then just run the command "npm install" in the terminal .
+
+*) never try to push "node_module" in git because they are very big in size even they become more than 2 GB and to ignore it create a .gitignore file  and add all the files name after a slash(/) whatever you don't want to push in github.
+
+*) CRUD -> Create, Read, Updata, Delete operations for a file is known as CRUD operation.
+
+*) It's not recommended to access files of the outer folder of current folder
+
+*) Buffer -> It's a temporary memory location.And also Node.Js needs memory such that they can perform operations,that's Buffer.
+
+*)	
+Synchronous operations	==>	In Synchronous operations tasks are performed one at a time.
+			Example => php  
+Asynchronous operations	==> In Asynchronous, second task do not wait for the first Task.
+			Example => JS , Node.JS
+
+*) setTimeout() is a function where it takes two parameters and first one is for any operation and second one is time span.
+
+*) Example of Drawback of Asynchronous programming :-->
+
+let b = 0;
+setTimeout(()=>{
+    b = 99;
+} ,1000);
+console.log(b);
+
+because here we didn't recieve the actual value of "b" .
+
+*) In Promise(resolve,reject) function when we use setTimeout() then we write "resolve" instead of writting "return".
+
+
+						-----: Architecture of Node.JS :-----
+
+*) When we run a Node.JS program,actually there are three task completed in Architecture and they are :--
+   a.) Call Stack
+   b.) Node APIs
+   c.) Callback Queue
+
+So we can draw the process by following this -->
+
+	--------------      -------------       ------------------
+	| Call Stack | -->	| Node APIs |  -->  | Callback Queue |
+	--------------      -------------       ------------------
+
+Here mark this sentence that it's not compulsorily needed the Second and Third part in Architecture but the very first part is needed compulsorily.
+
+*) Call-Stack registers every function before executing this.
+
+"setTimeout()" wala function is writtne in C/C++ means they are inherited so they will be registered in Node APIs instead of Call-Back and then among all the Node APIs registered functions minimum time wala function will be send to Callback Queue and when Call-Stack becomes Empty then one by one function will be reach to the main and executed.

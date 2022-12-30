@@ -1,0 +1,41 @@
+If we want to create blank repositry than we use "git init" .
+
+If we want to work on a existing project than use "git clone <URL>" .
+
+If we want to check any changes are made in our files than we have to use "git status" on the partcular file location.
+
+If we want to check what changes are made than we have to use "git diff <FileName>".
+
+We can only commit a staged area file
+so we have to use "git add <file name>" .
+
+If we want to check that what changes are made previously then we should use "git log"
+
+If we want to check only last n number of commit than we should use "git log -n" .
+
+------------------------------------------------------------------
+*) When we're using "git log" then it'll show all the commits done before the command pushed then you'll face a problem that's it'll show huge commited items,just to get rid of from that press "q+enter"  .
+------------------------------------------------------------------
+
+
+If we want to know that in a particullar commited command what changes are made by using the following command "git show <committed id>" .
+
+To check current branch write the command "git branch" .
+
+To create a new Branch write down the command "git checkout -b <newBranchName>" .
+
+To switch a branch write this command "git checkout <BranchName>" .
+
+To delete a branch , At first go to the location where the particullar branch is located then write "git branch -d <BranchName>" .
+
+
+When we try to add branch with master branch than write "git merge master" .
+
+Undo the latest change then write "git reset --hard HEAD" .
+
+
+
+
+
+
+

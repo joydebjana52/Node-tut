@@ -1,0 +1,67 @@
+*) "mongo" is replaced by "mongosh" .
+
+*) MongoDB Compass is a GUI tool.
+
+
+MongoDB Points:--
+1.) MongoDB is a NoSQL database.
+	==> Oracle,MySQL,SQL Server is "Structured Query Language" means they have query to find some data .
+2.) The data stored in a collection
+3.) Collection don't have row and columns
+4.) Data is stored in the form of Object.
+
+*) Create DB using Command :--
+	use "nameOfDB"
+after that you'll not able to see dataBase just bcx you haven;t created any collection and for this write the command :- db.createCollection('collectionsName');
+
+To check collections:- show collections;
+
+To drop a collection:- db.collectionName.drop(); // drop() is a funcion...
+
+To delete Database:- 
+	1.) use 'dbName"
+	2.) db.dropDatebase();	// it's also a method
+
+____________________________________________________
+
+
+Basic CRUD operation in MongoDB:--
+
+------------
+| C-Create |
+| R-Read   |_______________.
+| U-Update |_______________.
+| D-Delete |
+------------
+
+Check inserted data:--
+	1.) First Go to the desired db.
+	2.) Then write db.collectionName.find() .
+
+
+If we want to update data of a particular document than write this command:--
+
+	==> db.collectionName.updateOne({name:"nameValue"},{$set:{brand:"mi"}});
+
+To delete a particular document from a collection:-
+db.product.deleteOne({name:"apple"});
+
+
+
+**) SQL v/s MongoDB :-
+SQL stores data in form of Table in other hand MongoDB stores data in form of Object.
+
+____________________________________________________
+const dbConnect = require('./mongodb');
+const deleteData = async()=>{
+    let data = await dbConnect();
+    const result = await data.deleteMany({name:'narzo 10'});
+
+    if(result.acknowledged)
+    {
+        console.log(result.acknowledged);
+    }
+};
+deleteData();
+____________________________________________________
+if we want to delete a data which wasn't present in Database than we can't only confirming this by result.acknowledged we have to consider result.deletedCount also .If the value of deletedCount=0 that means the data wasn't present in your Database .
